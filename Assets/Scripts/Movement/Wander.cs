@@ -7,10 +7,13 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Wander : Physics2DObject
 {
-	[Header("Movement")]
+    public float keepNearFactor = 0.2f;
+
+    [Header("Movement")]
 	public float speed = 1f;
 	public float directionChangeInterval = 3f;
 	public bool keepNearStartingPoint = true;
+    
 
 	[Header("Orientation")]
 	public bool orientToDirection = false;
@@ -52,7 +55,7 @@ public class Wander : Physics2DObject
 			{
 				// we measure the distance from it...
 				float distanceFromStart = Vector2.Distance(startingPoint, transform.position);
-				if(distanceFromStart > 1f + (speed * 0.1f)) // and if it's too much...
+				if(distanceFromStart > keepNearFactor + (speed * 0.1f)) // and if it's too much...
 				{
 					//... we get a direction that points back to the starting point
 					direction = (startingPoint - transform.position).normalized;
