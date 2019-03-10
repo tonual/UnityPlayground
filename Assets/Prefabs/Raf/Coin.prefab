@@ -195,7 +195,7 @@ MonoBehaviour:
   target: 0
   deathEffect: {fileID: 1496494696399852, guid: 61bb6781d7b9444e89d1fd6eef729832,
     type: 2}
-  delay: 0.2
+  delay: 0.62
   dontDisableRender: 0
 --- !u!114 &114611439798007824
 MonoBehaviour:
